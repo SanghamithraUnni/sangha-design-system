@@ -2,7 +2,7 @@
 
 An exploration of team messaging organised around subjects. Channels lead to a topic list, then a conversation with its own composer. Direct messages and group chats stay lightweight.
 
-Run `pnpm dev` from `design-system/` and open `/topic-rooms.html`. The component showcase remains at `/`. `pnpm build` includes both pages.
+Run `pnpm dev` from `design-system/` and open `/topic-rooms.html`. The component showcase is at `/design-system/`. `pnpm build` includes both pages.
 
 The page imports Sangha components directly from `design-system/src/components.jsx`; its CSS uses shared tokens and stays scoped to the product. No shared component or skill changes are required. The full-width workspace deliberately exceeds the portfolio's 1120px reading container to keep three regions readable. Between 701–1000px, topics and conversations share a pane; on phones, channels, topics and conversations use separate views.
 

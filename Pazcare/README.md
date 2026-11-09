@@ -18,7 +18,7 @@ pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-Open the local URL printed in Terminal, normally http://127.0.0.1:5173/. Leave Terminal running; Control+C stops the preview. After dependencies are installed, `sh preview.sh` from the repository root is another way to start it. The launcher also supports Codex's bundled Node/pnpm when available.
+Open the local URL printed in Terminal, normally http://127.0.0.1:5173/. The assignment home links to all six demos, the design-system gallery and skill setup. Leave Terminal running; Control+C stops the preview. After dependencies are installed, `sh preview.sh` from the repository root is another way to start it. The launcher also supports Codex's bundled Node/pnpm when available.
 
 From `design-system/`, `pnpm test` runs the interaction checks and `pnpm build` creates the static preview in `dist/`. Dependencies and generated output are intentionally not tracked.
 
@@ -61,12 +61,29 @@ Foundation v0.2, its interactive gallery, and the reusable skill are included. W
 
 | Preview | Route |
 | --- | --- |
-| Design system gallery | `/` |
-| Reading Journal | `/reading-journal.html` |
-| Pick a Feeling | `/pick-a-feeling.html` |
-| Our Books in Common | `/books-in-common.html` |
-| Attention Desk | `/attention-desk.html` |
+| Pazcare assignment home | `/` |
+| Design system gallery | `/design-system/` |
+| Skill setup | `/skill-setup/` |
+| Reading Journal · Year Ribbon | `/reading-journal.html` |
+| Pick a Feeling · Shelf Postcards | `/pick-a-feeling.html` |
+| Our Books in Common · Reading Duet | `/books-in-common.html` |
+| Attention Desk · Catch-up Board | `/attention-desk.html` |
 | Switchboard | `/switchboard.html` |
 | Topic Rooms | `/topic-rooms.html` |
 
 Automated checks cover core interactions. A full accessibility audit and a live unfamiliar-product evaluation remain outstanding.
+
+## Publish the static site
+
+Keep the full repository available to the build: `design-system/`, `products/`, `explorations/` and `skills/` are all build inputs.
+
+| Setting | Value |
+| --- | --- |
+| Build working directory | `design-system` |
+| Tested runtime | Node 24.22.1, pnpm 11.25.0 |
+| Install | `pnpm install --frozen-lockfile` |
+| Build | `pnpm build` |
+| Publish output | `dist` from the build directory (`design-system/dist` from repository root) |
+| Hosting | Static files at the domain root with directory indexes enabled |
+
+Serve each built HTML page directly; no single-page-app rewrite is needed. The site uses root-relative URLs, so hosting it under a subpath requires changing and retesting links and asset paths. For a manual static upload, upload the contents of the built `dist/` directory.

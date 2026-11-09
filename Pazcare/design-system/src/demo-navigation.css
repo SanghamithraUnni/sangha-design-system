@@ -1,0 +1,4 @@
+.assignment-demo-page { --assignment-nav-height: var(--space-10); }
+.assignment-demo-nav {display:flex; align-items:center; height:var(--assignment-nav-height); padding-inline:var(--layout-gutter); background:var(--surface-base); border-bottom:var(--border-width) solid var(--border-subtle); font-size:var(--text-sm);}
+.assignment-demo-nav a {color:var(--text-secondary);}
+.assignment-demo-page :is(.ad-app,.sb-app,.tr-app) {height:calc(100dvh - var(--assignment-nav-height));}

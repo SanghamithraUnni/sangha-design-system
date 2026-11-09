@@ -76,7 +76,7 @@ export function TopicRooms() {
     <button className={`tr-nav-row ${chat?.id==='trio'?'is-selected':''}`} aria-current={chat?.id==='trio'?'page':undefined} onClick={()=>selectChat('trio')}><span className="tr-group-mark" aria-hidden="true">3</span><span>Website working group</span></button>
     <div className="tr-sidebar-note"><span className="tr-eyebrow">A little more clarity</span><p>One topic. One conversation.<br/>Room for every good idea.</p></div>
    </div>
-   <footer className="tr-profile"><Avatar name={people.you} size="sm"/><div><strong>{people.you}</strong><span>Product designer</span></div><a href="/" aria-label="Open design-system showcase" title="Design-system showcase"><Icon name="external"/></a></footer>
+   <footer className="tr-profile"><Avatar name={people.you} size="sm"/><div><strong>{people.you}</strong><span>Product designer</span></div><a href="/design-system/" aria-label="Open design-system showcase" title="Design-system showcase"><Icon name="external"/></a></footer>
   </aside>
 
   <header className="tr-topbar"><div className="tr-topbar-path"><span>Workspace</span><span aria-hidden="true">/</span><strong>{chat&&view==='conversation'?'Messages':`# ${channel.name}`} </strong></div><span className="tr-topbar-note">Good conversations move work forward.</span><Avatar name={people.you} size="sm"/></header>
