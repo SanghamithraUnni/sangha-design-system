@@ -1,4 +1,13 @@
 import React, {useEffect, useId, useRef, useState} from 'react';
+import { ArrowRightIcon } from '@phosphor-icons/react/dist/csr/ArrowRight';
+import { ArrowSquareOutIcon } from '@phosphor-icons/react/dist/csr/ArrowSquareOut';
+import { CheckIcon } from '@phosphor-icons/react/dist/csr/Check';
+import { XIcon } from '@phosphor-icons/react/dist/csr/X';
+import { PlusIcon } from '@phosphor-icons/react/dist/csr/Plus';
+import { CaretDownIcon } from '@phosphor-icons/react/dist/csr/CaretDown';
+import { DotsThreeIcon } from '@phosphor-icons/react/dist/csr/DotsThree';
+import { PaperPlaneTiltIcon } from '@phosphor-icons/react/dist/csr/PaperPlaneTilt';
+import { FloppyDiskIcon } from '@phosphor-icons/react/dist/csr/FloppyDisk';
 import './tokens.css';
 import './components.css';
 export function Button({variant='primary',size='default',loading=false,disabled=false,icon,iconPosition='start',children,className='',type='button',...props}) {
@@ -19,11 +28,15 @@ export function Modal({open,onClose,title,description,children}) {
  return <dialog ref={ref} className="ds-modal" aria-labelledby={titleId} aria-describedby={description?descriptionId:undefined} onKeyDown={e=>{if(e.key!=='Tab')return;const nodes=[...e.currentTarget.querySelectorAll('button:not([disabled]),a[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex="0"]')].filter(el=>el.getClientRects().length);const first=nodes[0],last=nodes.at(-1);if(!first){e.preventDefault();e.currentTarget.focus();}else if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}} onCancel={e=>{e.preventDefault();closeRef.current();}} onClick={e=>{if(e.target===e.currentTarget){const r=e.currentTarget.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)onClose();}}}><div className="modal-heading"><h2 id={titleId}>{title}</h2><IconButton label="Close dialog" icon="close" variant="ghost" onClick={onClose}/></div>{description&&<p id={descriptionId}>{description}</p>}{children}</dialog>;
 }
 
-/** Small, local SVG icon set. No third-party icon font or network dependency. */
-export function Icon({name,size='md'}){
- const paths={arrow:<path d="M5 12h14m-6-6 6 6-6 6"/>,external:<><path d="M14 4h6v6M20 4l-9 9"/><path d="M10 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-5"/></>,check:<path d="m5 12 4 4L19 6"/>,close:<path d="m6 6 12 12M6 18 18 6"/>,plus:<path d="M12 5v14M5 12h14"/>,chevron:<path d="m6 9 6 6 6-6"/>,more:<><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></>,send:<><path d="m3 3 18 9-18 9 4-9-4-9ZM7 12h14"/></>,save:<><path d="M5 3h12l4 4v14H3V3h2Z"/><path d="M7 3v6h10V3M7 21v-8h10v8"/></>};
- if(!paths[name])return null;
- return <svg className={`ds-icon ${size}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">{paths[name]}</svg>;
+/** Phosphor icons; aliases preserve the public Button/Icon API. */
+const iconComponents = {arrow:ArrowRightIcon, external:ArrowSquareOutIcon, check:CheckIcon,
+ close:XIcon, plus:PlusIcon, chevron:CaretDownIcon, more:DotsThreeIcon,
+ send:PaperPlaneTiltIcon, save:FloppyDiskIcon};
+export function Icon({name,size='md',weight='regular'}){
+ const Glyph=iconComponents[name];
+ if(!Glyph)return null;
+ return <Glyph className={`ds-icon ${size}`} size={`var(--icon-${size})`} weight={weight}
+   color="currentColor" aria-hidden="true" focusable="false"/>;
 }
 export function IconButton({label,icon='more',size='default',variant='secondary',...props}){return <Button {...props} variant={variant} size={size} className="ds-icon-button" aria-label={label} icon={icon}><span className="sr-only">{label}</span></Button>}
 export function Textarea({label,hint,error,id,rows=4,...props}){const generated=useId();const fieldId=id||generated;return <div className="ds-field"><label htmlFor={fieldId}>{label}{props.required&&<span aria-hidden="true"> *</span>}</label><textarea {...props} id={fieldId} rows={rows} aria-invalid={error?true:undefined} aria-describedby={hint||error?`${fieldId}-message`:undefined}/>{(hint||error)&&<span id={`${fieldId}-message`} className={error?'field-error':'field-hint'}>{error||hint}</span>}</div>}

@@ -41,7 +41,7 @@ Do not run the link command if that path already exists. Git preserves the relat
 - `assets/design-system/`: reusable v0.2 source and full component API guide for use elsewhere.
 - `assets/source-manifest.json`: provenance and file hashes for that snapshot.
 
-The original repository's `design-system/` remains authoritative. Keep its reusable source, guide and bundled snapshot in sync when changing the system. No GitHub login or external connector is required to use this skill.
+The original repository's `design-system/` remains authoritative. Ask the user before future updates that affect both `design-system/` and `skills/sangha-ui/`; once approved, keep the reusable source, guide and bundled snapshot in sync. The portable source now also requires `@phosphor-icons/react` 2.1.10 (Phosphor regular icons). No GitHub login or external connector is required to use this skill.
 
 Codex discovery and symlink setup follows [OpenAI's skill documentation](https://learn.chatgpt.com/docs/build-skills).
 

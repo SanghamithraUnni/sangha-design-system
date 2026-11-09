@@ -11,7 +11,7 @@ Translate the user's product brief into an interface using the Sangha design sys
 
 Read [references/integration.md](references/integration.md) first to choose the source location and set up imports. In the original repository, use `design-system/src/components.jsx`, `tokens.css`, `components.css` and `design-system/GUIDE.md` as the source of truth. Do not rebuild components inside the product or import the gallery's `main.jsx`/`preview.css`.
 
-For a different repository, the skill includes a portable source snapshot in `assets/design-system/`. Copy that source into the target project's `design-system/` only if it has no Sangha implementation. Do not overwrite an existing implementation. Read the selected implementation's `GUIDE.md` for exact props, examples, keyboard behaviour and limitations before composing it. The snapshot needs React and Manrope; integration instructions list the dependencies. Do not assume this conversation, portfolio access, a particular machine path or a GitHub connection exists.
+For a different repository, the skill includes a portable source snapshot in `assets/design-system/`. Copy that source into the target project's `design-system/` only if it has no Sangha implementation. Do not overwrite an existing implementation. Read the selected implementation's `GUIDE.md` for exact props, examples, keyboard behaviour and limitations before composing it. The snapshot needs React, Manrope and @phosphor-icons/react; integration instructions list the dependencies. Do not assume this conversation, portfolio access, a particular machine path or a GitHub connection exists.
 
 ## Choose the product structure
 
@@ -24,9 +24,13 @@ Choose the layout for the task: a dense workspace, a browsing/profile page, an e
 - Use the shared semantic tokens: neutral canvas/white/subtle surfaces, dark text, muted supporting text, restrained blue emphasis. Functional colours convey named status, with text or icons as well as colour.
 - Use Manrope hierarchy and the 4px spacing scale. Retain pill actions and named corner/elevation roles; feature gradients/shadows belong to prominent content, not every row.
 - Keep component defaults and variant meaning consistent. Main action: primary Button; alternative: secondary; low emphasis: ghost; destructive intent: danger. Card groups passive content. Tag classifies/filters; Badge reports count/status. Tabs switch nearby panels; Nav changes destinations.
-- Use optional action-specific SVG icons; keep checkmark/label spacing, focus rings and accessible names. Avoid arbitrary arrows on every button or emoji as interface icons.
+- Use Phosphor icons through the shared Icon wrapper (regular weight by default, token sizes 14/18/24px); use optional action-specific icons; keep checkmark/label spacing, focus rings and accessible names. Avoid arbitrary arrows on every button or emoji as interface icons.
 - Comfortable controls are 44px high; compact 36px is for dense desktop contexts. Keep comfortable touch actions. Adjust layout and spacing before shrinking text.
 - Use named duration/easing tokens and honour reduced motion. Current menus/dialogs exit immediately; the exit easing token is reserved, not evidence of an implemented exit animation.
+
+## Approval for coordinated updates
+
+Before a future change modifies both `design-system/` and `skills/sangha-ui/` (including bundled assets), explain the proposed source/skill changes and ask the user to approve that specific update. Do not sync both automatically. Approval of one update is not blanket approval for later updates. Working in only one folder does not itself trigger this coordination rule.
 
 ## Extend only what is missing
 

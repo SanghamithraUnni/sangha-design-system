@@ -11,7 +11,7 @@ The portable assets contain reusable components only, not a runnable app scaffol
 
 ## Dependencies and imports
 
-Use existing compatible React/react-dom dependencies where present. The original source uses React 19, React DOM 19 and `@fontsource/manrope` 5.x. Match React and React DOM versions. Install packages using the target lockfile's package manager; avoid adding a second lockfile. Do not copy node_modules, build output or preview files.
+Use existing compatible React/react-dom dependencies where present. The original source uses React 19, React DOM 19, `@fontsource/manrope` 5.x and `@phosphor-icons/react` 2.1.10. Install Phosphor along with the fonts in a new host; copying source alone does not install dependencies. Match React and React DOM versions. Install packages using the target lockfile's package manager; avoid adding a second lockfile. Do not copy node_modules, build output or preview files.
 
 Load Manrope once at the app entry:
 
@@ -61,4 +61,4 @@ Button, Input, Card, Tag, Nav, List, Modal, Avatar, IconButton, Tabs, Badge, Tex
 
 ## Snapshot maintenance
 
-The original repository's `design-system/` is authoritative. Portable copies are fallback assets, not an automatically synchronized package. When updating the system in this repository, update the guide and skill snapshot together if the change should travel to other projects. `assets/source-manifest.json` records source paths, version and SHA-256 hashes for the bundled copy. Recompute it when refreshing the snapshot. Never copy product data or secrets into the skill.
+The original repository's `design-system/` is authoritative. Portable copies are fallback assets, not an automatically synchronized package. Before updating both the system and this skill, ask the user to approve the specific coordinated change. After approval, update the guide, Phosphor dependency requirements and skill snapshot together if the change should travel to other projects. `assets/source-manifest.json` records source paths, version and SHA-256 hashes for the bundled copy. Recompute it when refreshing the snapshot. Never copy product data or secrets into the skill.

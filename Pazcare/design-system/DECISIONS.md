@@ -44,3 +44,8 @@ Whether all-uppercase buttons still feel right; whether the blue should be more 
 ## v0.2 refinement additions
 
 The existing ease-standard/ease-enter tokens are now explained in the preview and GUIDE.md; ease-exit is added as a reserved rule. Added semantic token aliases, hover/pressed tokens, control/icon/avatar sizes, border widths, density roles and named layers. The checkmark-to-label gap is explicitly 8px. Button icons are optional SVGs with action-specific meaning. Six general interface components were added without product-specific message/book UI. All added rules are extensions; none are claimed to be newly measured from the portfolio.
+
+
+## Phosphor icon migration
+
+At the user's request, the custom SVG paths are replaced with @phosphor-icons/react. Regular is the default weight, with existing 14/18/24px size tokens. Public icon aliases are preserved so Button/IconButton consumers do not change. Icons inherit currentColor, remain decorative inside labelled controls and are loaded from the installed package, not a runtime CDN. Future changes spanning design-system and skills/sangha-ui require a fresh user approval before modifying both.

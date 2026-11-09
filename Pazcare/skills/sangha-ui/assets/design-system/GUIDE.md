@@ -164,4 +164,32 @@ Same label/hint/error/id contract as Input; rows default 4 and native textarea p
 
 ### Icon utility
 
-Built-in SVG names: arrow, external, check, close, plus, chevron, more, send, save. Sizes sm/md/lg. Always decorative/hidden from assistive tech; Button text or IconButton label gives meaning. Unknown names render no icon. Extend this local stroke icon set consistently (24-unit viewBox, 1.7 stroke, round ends), not with random emoji.
+The icon family is **Phosphor**, installed through `@phosphor-icons/react` (currently 2.1.10). Use the shared Icon wrapper so controls keep a consistent size and accessible behaviour. Default weight is **regular**; do not mix thin/light/bold/duotone arbitrarily. Use fill only when it deliberately represents a selected state, with another visible/accessibility cue. Keep the existing 14/18/24px tokens and inherited currentColor. Phosphor owns the glyph geometry; do not force the previous custom 24-unit grid or 1.7 stroke onto it.
+
+Stable aliases map to Phosphor exports:
+
+| Alias | Phosphor icon | Typical use |
+| --- | --- | --- |
+| arrow | ArrowRightIcon | Continue/forward |
+| external | ArrowSquareOutIcon | External destination |
+| check | CheckIcon | Selected/completed |
+| close | XIcon | Dismiss |
+| plus | PlusIcon | Add |
+| chevron | CaretDownIcon | Expand menu |
+| more | DotsThreeIcon | More actions |
+| send | PaperPlaneTiltIcon | Send |
+| save | FloppyDiskIcon | Save |
+
+Icon accepts `name`, `size` sm/md/lg (default md) and `weight` (default regular). It is decorative and hidden from assistive tech: Button text or IconButton's required label supplies meaning. Unknown names render no icon. Icons remain optional on text buttons. Choose icons for the action rather than adding arrows to everything.
+
+```jsx
+<Icon name="check" size="sm" />
+<Button icon="save">Save changes</Button>
+<IconButton label="Send message" icon="send" />
+```
+
+For a missing glyph, choose an appropriate Phosphor icon and add a statically imported alias to the shared registry. Import individual files from `@phosphor-icons/react/dist/csr/<Name>` rather than dynamically importing the entire catalogue. Do not copy SVG paths or add another icon family. A server-only host can use Phosphor's SSR exports; the current interactive components belong inside a client boundary.
+
+### Coordinating future changes
+
+Ask the user before any future update that modifies both `design-system/` and `skills/sangha-ui/`, including refreshing the portable snapshot. Explain which files need syncing and why. Once that update is approved, keep the source, documentation, dependency requirements and snapshot manifest aligned.

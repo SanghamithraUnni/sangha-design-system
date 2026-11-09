@@ -1,6 +1,6 @@
-# Sangha design system · v0.1
+# Sangha design system · v0.2
 
-A React foundation extracted from Sanghamithra's portfolio. No reusable skill or product layouts are included.
+A React foundation extracted from Sanghamithra's portfolio, with fourteen reusable components. The companion skill is in `../skills/sangha-ui/`; product layouts have not been built.
 
 ## Open the preview
 
@@ -13,7 +13,7 @@ pnpm dev
 
 Open the local address printed in the terminal (usually http://127.0.0.1:5173). Leave the terminal running. To stop, press Control+C. `pnpm build` produces the static preview in `dist/`. `pnpm test` runs interaction tests.
 
-This computer currently uses Codex's bundled Node and pnpm. From the project root you can also run `./preview.sh`, which finds those tools automatically. No GitHub connection is needed.
+This computer currently uses Codex's bundled Node and pnpm. After installing dependencies, from the repository root you can also run `sh preview.sh`, which finds those tools automatically. This also works when a ZIP download does not retain executable permissions. No GitHub connection is needed.
 
 ## Files
 
