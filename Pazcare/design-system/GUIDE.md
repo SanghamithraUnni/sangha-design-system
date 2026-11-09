@@ -12,13 +12,22 @@ Preserve semantic colour roles, Manrope hierarchy, spacing increments, named cor
 - Surfaces: `--surface-page` outer canvas; `--surface-base` content; `--surface-subtle` secondary groups. `--surface-selected` identifies selection.
 - Section tints: use `--surface-tint-blue` (#EDF4FF), `--surface-tint-lavender` (#F1EDF9), or `--surface-tint-mint` (#EAF6EF) as backgrounds to distinguish peer content groups. Pair them with primary or secondary text and a visible group label. Use the existing status and selection tokens for feedback and interactive states.
 - Borders: `--border-subtle` decorative separation; `--border-control` stronger input boundaries; `--border-focus` keyboard focus. Widths: `--border-width` 1px, `--border-width-selected` 2px, `--focus-width` 2px. Focus also has white separation and a blue outer shadow.
-- Accent: `--color-accent` for links/focus/selection; `--color-accent-soft` pale accent surface. Soft hover/pressed: `--accent-hover-soft`/`--accent-pressed-soft`. Solid accent hover token is reserved for future solid accent controls.
+- Accent: `--color-accent` for links/focus/selection; `--color-accent-soft` pale accent surface. Soft hover/pressed: `--accent-hover-soft`/`--accent-pressed-soft`. The accent Button uses the pale blue surface with blue text. The primary Button is the filled dark action.
 - Functional: success, warning and danger each have foreground and soft background tokens. Error meaning also needs text. Danger action uses a solid foreground/background pairing with named hover and pressed tokens.
 - Hover: surface-hover or action-hover. Pressed: surface-pressed/action-pressed; primary buttons also shift down 1px. Selected: blue text, soft blue fill and a border/underline or checkmark. Disabled: opacity .45 and native disabled. Keyboard focus: shared focus ring, never colour alone.
 - Control heights: comfortable 44px; compact 36px. Icon sizes 14/18/24px; button icons default 18px. Icon buttons are square with the same control height. Avatar sizes 32/40/56px.
 - Comfortable list rows: 16px vertical padding. Compact: 8px. Use compact in dense desktop lists only; keep comfortable actions on touch screens. Do not shrink font sizes to create density. Component spacing stays on the 4px scale.
 - Layout: shared max content width 1120px; default outer gutter 32px, phone gutter 16px. Stack multi-column product regions at or before 700px; between 701 and 1100px simplify sidebars/columns as content requires; above 1100px allow multi-column layouts. These are new recommended rules, not claimed portfolio measurements. The gallery uses its existing 700/1100px layout breakpoints and its own presentational gutters. Components are fluid; Tabs scroll horizontally; menu width is bounded by viewport. Long labels wrap. Menus are simple anchored lists, not nested menus or collision-aware portals: place them with room below and inside non-clipping containers.
 - Layers: base 0, sticky 10, menu 50, overlay 100. Menus use z-index 50. Native modal dialogs use the browser top layer, above ordinary z-index content; the overlay token is reserved for future non-native overlays. Avoid arbitrary larger values.
+
+### Composition and hierarchy
+
+- **Page shell.** Use `--surface-page` for the cool grey outer canvas and `--surface-base` for one white surface. Separate them with `--border-subtle`, a named corner radius, and responsive gutters. Use whitespace and separators for internal groups that do not need their own cards.
+- **Visual focus.** Give the main task one prominent area using a labeled tint, meaningful media, or a feature Card. Keep adjacent context compact. Use mint, lavender, and blue as section surfaces where they distinguish groups. Keep functional status labels separate from decorative tints.
+- **Type roles.** Use display for the page title, section for major groups, title for card headings, body for reading, and small or extra small for labels and metadata. Keep full reviews at the body role. Let long titles wrap and align peer card media and footers.
+- **Action hierarchy.** Use the existing dark primary for the main action and pale blue accent for selective supporting emphasis. Give a quiet action blue text only when it advances its section. Keep repeated rows neutral and show interactivity through shape, spacing, hover, and focus.
+- **Search and reviews.** Compose a labeled search input with a decorative leading search icon and adjacent submit button. Keep both visible on small screens. For reviews, put title and author before rating and date, then the excerpt and a distinct action footer. Use `--color-rating` for gold stars with an accessible score and neutral score text. Use a labeled, pressed-state button for reactions.
+- **Responsive flow.** Keep the focus area and supporting rail side by side when space allows, then stack in task order. Put large collections across the available width below. The gallery’s Patterns section demonstrates these compositions with existing components.
 
 ### Motion and easing (chosen additions)
 
@@ -39,7 +48,7 @@ All snippets assume React and the named exports are imported. Controlled example
 
 ### Button
 
-`variant`: primary (default), secondary, accent, ghost, danger. `size`: default or compact. `loading`, `disabled`, optional `icon`, `iconPosition` start/end, children and native button props. Type defaults to button; use submit in forms. Primary for the main action, secondary for alternatives, ghost for low emphasis, accent sparingly, danger for destructive intent. Icons optional: save for saving, send for messaging, plus for adding, external only when a destination leaves the app, arrow for moving forward. Never attach an external-link icon to every action.
+`variant`: primary (default), secondary, accent, ghost, danger. `size`: default or compact. `loading`, `disabled`, optional `icon`, `iconPosition` start/end, children and native button props. Type defaults to button; use submit in forms. Primary for the main action, secondary for alternatives, ghost for low emphasis, accent for soft blue emphasis, danger for destructive intent. Icons optional: save for saving, send for messaging, plus for adding, external only when a destination leaves the app, arrow for moving forward. Never attach an external-link icon to every action.
 
 ```jsx
 <Button variant="primary" icon="save" onClick={save}>Save changes</Button>
@@ -180,6 +189,14 @@ Stable aliases map to Phosphor exports:
 | more | DotsThreeIcon | More actions |
 | send | PaperPlaneTiltIcon | Send |
 | save | FloppyDiskIcon | Save |
+
+| search | MagnifyingGlassIcon | Search field cue |
+| heart, star | HeartIcon, StarIcon | Reaction and rating |
+| book, books | BookOpenIcon, BooksIcon | Reading and collections |
+| calendar, review, quote | CalendarBlankIcon, ChatCircleTextIcon, QuotesIcon | Dates, reviews and excerpts |
+| sparkle, tag | SparkleIcon, TagSimpleIcon | Featured content and categories |
+| target, trophy | TargetIcon, TrophyIcon | Goals and milestones |
+| profile, people, list | UserCircleIcon, UsersIcon, ListBulletsIcon | Identity, community and collections |
 
 Icon accepts `name`, `size` sm/md/lg (default md) and `weight` (default regular). It is decorative and hidden from assistive tech: Button text or IconButton's required label supplies meaning. Unknown names render no icon. Icons remain optional on text buttons. Choose icons for the action rather than adding arrows to everything.
 

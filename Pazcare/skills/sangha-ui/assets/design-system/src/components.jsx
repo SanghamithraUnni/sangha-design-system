@@ -8,6 +8,21 @@ import { CaretDownIcon } from '@phosphor-icons/react/dist/csr/CaretDown';
 import { DotsThreeIcon } from '@phosphor-icons/react/dist/csr/DotsThree';
 import { PaperPlaneTiltIcon } from '@phosphor-icons/react/dist/csr/PaperPlaneTilt';
 import { FloppyDiskIcon } from '@phosphor-icons/react/dist/csr/FloppyDisk';
+import { BookOpenIcon } from '@phosphor-icons/react/dist/csr/BookOpen';
+import { BooksIcon } from '@phosphor-icons/react/dist/csr/Books';
+import { CalendarBlankIcon } from '@phosphor-icons/react/dist/csr/CalendarBlank';
+import { ChatCircleTextIcon } from '@phosphor-icons/react/dist/csr/ChatCircleText';
+import { HeartIcon } from '@phosphor-icons/react/dist/csr/Heart';
+import { SparkleIcon } from '@phosphor-icons/react/dist/csr/Sparkle';
+import { TagSimpleIcon } from '@phosphor-icons/react/dist/csr/TagSimple';
+import { TargetIcon } from '@phosphor-icons/react/dist/csr/Target';
+import { TrophyIcon } from '@phosphor-icons/react/dist/csr/Trophy';
+import { UserCircleIcon } from '@phosphor-icons/react/dist/csr/UserCircle';
+import { UsersIcon } from '@phosphor-icons/react/dist/csr/Users';
+import { ListBulletsIcon } from '@phosphor-icons/react/dist/csr/ListBullets';
+import { QuotesIcon } from '@phosphor-icons/react/dist/csr/Quotes';
+import { MagnifyingGlassIcon } from '@phosphor-icons/react/dist/csr/MagnifyingGlass';
+import { StarIcon } from '@phosphor-icons/react/dist/csr/Star';
 import './tokens.css';
 import './components.css';
 export function Button({variant='primary',size='default',loading=false,disabled=false,icon,iconPosition='start',children,className='',type='button',...props}) {
@@ -31,7 +46,11 @@ export function Modal({open,onClose,title,description,children}) {
 /** Phosphor icons; aliases preserve the public Button/Icon API. */
 const iconComponents = {arrow:ArrowRightIcon, external:ArrowSquareOutIcon, check:CheckIcon,
  close:XIcon, plus:PlusIcon, chevron:CaretDownIcon, more:DotsThreeIcon,
- send:PaperPlaneTiltIcon, save:FloppyDiskIcon};
+ send:PaperPlaneTiltIcon, save:FloppyDiskIcon,
+ book:BookOpenIcon, books:BooksIcon, calendar:CalendarBlankIcon, review:ChatCircleTextIcon,
+ heart:HeartIcon, sparkle:SparkleIcon, tag:TagSimpleIcon, target:TargetIcon,
+ trophy:TrophyIcon, profile:UserCircleIcon, people:UsersIcon, list:ListBulletsIcon,
+ quote:QuotesIcon, search:MagnifyingGlassIcon, star:StarIcon};
 export function Icon({name,size='md',weight='regular'}){
  const Glyph=iconComponents[name];
  if(!Glyph)return null;

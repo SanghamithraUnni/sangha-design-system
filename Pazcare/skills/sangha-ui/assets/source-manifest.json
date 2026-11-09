@@ -6,7 +6,7 @@
     {
       "source": "design-system/src/tokens.css",
       "bundled": "design-system/src/tokens.css",
-      "sha256": "ee91a3d3a973c852b6ab6ae7b9e1c52ca2887f3d17c30ded5b78f9fda10563d7"
+      "sha256": "1694c2c49be2dd25e4ac6914c8989f04a35ff3b716850528468aa8dc409f1d5f"
     },
     {
       "source": "design-system/src/components.css",
@@ -16,12 +16,12 @@
     {
       "source": "design-system/src/components.jsx",
       "bundled": "design-system/src/components.jsx",
-      "sha256": "ea51ca46f1e03dfde145ace1c3b58cba4162438b43ece5b5c2d248586d4451a2"
+      "sha256": "71e3ce6e029244ba0b6f4a27d542d43ee4114c4210339da73c474e5d41d56beb"
     },
     {
       "source": "design-system/GUIDE.md",
       "bundled": "design-system/GUIDE.md",
-      "sha256": "c3eab226d6c79935bc762c10ca61e529ca9eaf3d86c48e42c2a8f2a481f28a20"
+      "sha256": "eda70b2725a1d3f8f127c1e5d930a985383137c00d0680318971d3a53558668a"
     }
   ],
   "dependencies": {
@@ -30,5 +30,5 @@
     "@fontsource/manrope": "5.x",
     "@phosphor-icons/react": "2.1.10"
   },
-  "source_revision": "Section surface tints and usage guidance; file hashes define this snapshot."
+  "source_revision": "Rating gold, shared icon aliases, and composition guidance; file hashes define this snapshot."
 }

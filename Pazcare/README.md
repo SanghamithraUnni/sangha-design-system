@@ -38,6 +38,8 @@ To use it in a different project, copy the complete skill folder into that proje
 .agents/skills/sangha-ui -> ../../skills/sangha-ui
  design-system/              React source, tokens, preview and tests
  skills/sangha-ui/            Skill instructions, references and portable assets
+ explorations/reader-profile/ Reading Journal and shared reader data
+ products/team-messaging/     Three messaging explorations
  portfolio-audit.md           Original source-style audit
  preview.sh                  Optional preview launcher
 ```
@@ -51,8 +53,18 @@ To use it in a different project, copy the complete skill folder into that proje
 
 ## History
 
-The original local checkpoints are preserved. GitHub's separate website-upload commit is also retained when the histories are reconciled. Do not force-push to replace either history. Continue making small, meaningful commits; upload with Git push so the history travels with the files.
+Continue making small, meaningful commits. Preserve existing branches and history when publishing updates.
 
 ## Current scope
 
-Foundation v0.2 and the reusable skill are included. No six product layouts have been built. Passing automated checks is not a full accessibility audit; preference-on reduced-motion visual testing and a live unfamiliar-product evaluation remain outstanding.
+Foundation v0.2, its interactive gallery, and the reusable skill are included. With the preview server running, open one of these routes:
+
+| Preview | Route |
+| --- | --- |
+| Design system gallery | `/` |
+| Reading Journal | `/reading-journal.html` |
+| Attention Desk | `/attention-desk.html` |
+| Switchboard | `/switchboard.html` |
+| Topic Rooms | `/topic-rooms.html` |
+
+Automated checks cover core interactions. A full accessibility audit and a live unfamiliar-product evaluation remain outstanding.
