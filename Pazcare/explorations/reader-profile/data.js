@@ -13,7 +13,7 @@ export const books = {
   left: { title: 'The Left Hand of Darkness', author: 'Ursula K. Le Guin', genre: 'Speculative fiction', cover: 'ice',
     edition: { isbn: '9780441007318', publisher: 'Ace', format: 'Paperback', coverUrl: prhCover('9780441007318') } },
   piranesi: { title: 'Piranesi', author: 'Susanna Clarke', genre: 'Speculative fiction', cover: 'sea',
-    edition: { isbn: '9781635575637', publisher: 'Bloomsbury', format: 'Hardcover', coverUrl: 'https://covers2.booksamillion.com/covers/bam/1/63/557/563/163557563X_b.jpg' } },
+    edition: { isbn: '9781635575637', publisher: 'Bloomsbury', format: 'Hardcover', coverUrl: 'https://covers.bksh.co/cover187287-medium.png' } },
   tomorrow: { title: 'Tomorrow, and Tomorrow, and Tomorrow', author: 'Gabrielle Zevin', genre: 'Literary fiction', cover: 'rose',
     edition: { isbn: '9780593321201', publisher: 'Knopf', format: 'Hardcover', coverUrl: prhCover('9780593321201') } },
   dispossessed: { title: 'The Dispossessed', author: 'Ursula K. Le Guin', genre: 'Speculative fiction', cover: 'ochre',
@@ -115,4 +115,41 @@ export const community = {
   polls: [{ title: 'December buddy read', options: ['The Dispossessed', 'The House in the Cerulean Sea'] }],
   lists: [{ title: 'Books with impossible places', books: ['piranesi', 'night', 'sea'] }],
   comments: [{ name: 'Leah Thomas', date: '2026-11-03', text: 'Your October reads convinced me to finally pick up Pachinko.' }],
+};
+
+export const readingMoods = [
+  {
+    id: 'cry', label: 'Make me cry', caption: 'Big feelings, quiet endings', tone: 'lavender', icon: 'heart',
+    picks: [
+      {book: 'pachinko', shelf: 'favourites', reason: 'For the kind of cry that sneaks up on you. Sunja’s choices echo through generations, and the smallest acts of care hit hardest.'},
+      {book: 'tomorrow', shelf: 'read', reason: 'The friendship at the centre aches because the characters care so much and still keep getting it wrong.'},
+      {book: 'station', shelf: 'favourites', reason: 'Read it for the things people carry forward after loss, especially the art they make for one another.'},
+    ],
+  },
+  {
+    id: 'night', label: 'Keep me up all night', caption: 'One more chapter', tone: 'blue', icon: 'sparkle',
+    picks: [
+      {book: 'night', shelf: 'read', reason: 'Each tent reveals another piece of the competition. I kept opening one more chapter to see what was behind the next curtain.'},
+      {book: 'station', shelf: 'favourites', reason: 'The jumps in time turn familiar objects into clues. I wanted to see where all those threads met.'},
+      {book: 'tomorrow', shelf: 'read', reason: 'The momentum comes from watching a small creative decision turn into a much bigger personal one.'},
+    ],
+  },
+  {
+    id: 'world', label: 'Give me a world to get lost in', caption: 'Somewhere entirely different', tone: 'mint', icon: 'book',
+    picks: [
+      {book: 'piranesi', shelf: 'favourites', reason: 'Come for an endless house with oceans inside it. Stay for the way Piranesi makes its tides, statues, and quiet rituals feel like home.'},
+      {book: 'dispossessed', shelf: 'strange', reason: 'Two societies feel real through the little things, like how a room is shared or what a meal means to someone.'},
+      {book: 'sea', shelf: 'read', reason: 'A remote island and its peculiar household make this the warmest place on the shelf to disappear for an afternoon.'},
+    ],
+  },
+];
+
+export const bookDescriptions = {
+  pachinko: 'Four generations of a Korean family build a life in Japan across decades of upheaval.',
+  tomorrow: 'Two friends build video games together as their creative partnership tests their friendship.',
+  station: 'A travelling theatre troupe performs in the years after a pandemic changes the world.',
+  night: 'Two magicians compete inside a circus that only opens after dark.',
+  piranesi: 'A solitary explorer maps a vast house filled with statues, tides, and clues to his past.',
+  dispossessed: 'A physicist travels between two worlds with opposing ideas about freedom and ownership.',
+  sea: 'A caseworker visits a remote island home for children with unusual powers.',
 };
