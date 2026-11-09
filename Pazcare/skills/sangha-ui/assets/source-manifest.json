@@ -6,7 +6,7 @@
     {
       "source": "design-system/src/tokens.css",
       "bundled": "design-system/src/tokens.css",
-      "sha256": "b2f9f08946b187e85e722bddc548a189612c34adc38807377e5099a1526ad60e"
+      "sha256": "ee91a3d3a973c852b6ab6ae7b9e1c52ca2887f3d17c30ded5b78f9fda10563d7"
     },
     {
       "source": "design-system/src/components.css",
@@ -21,7 +21,7 @@
     {
       "source": "design-system/GUIDE.md",
       "bundled": "design-system/GUIDE.md",
-      "sha256": "af15e92673d335fa48b51dfb32487060041b5ab4478fad5339ea025de29bb81a"
+      "sha256": "c3eab226d6c79935bc762c10ca61e529ca9eaf3d86c48e42c2a8f2a481f28a20"
     }
   ],
   "dependencies": {
@@ -30,5 +30,5 @@
     "@fontsource/manrope": "5.x",
     "@phosphor-icons/react": "2.1.10"
   },
-  "source_revision": "Phosphor migration; file hashes define this snapshot. See the Git commit containing this manifest."
+  "source_revision": "Section surface tints and usage guidance; file hashes define this snapshot."
 }

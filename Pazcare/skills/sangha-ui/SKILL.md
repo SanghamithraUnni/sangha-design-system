@@ -22,6 +22,7 @@ Choose the layout for the task: a dense workspace, a browsing/profile page, an e
 ## Preserve the visual language
 
 - Use the shared semantic tokens: neutral canvas/white/subtle surfaces, dark text, muted supporting text, restrained blue emphasis. Functional colours convey named status, with text or icons as well as colour.
+- For named content groups, use the shared blue, lavender and mint section tints (`--surface-tint-blue`, `--surface-tint-lavender`, `--surface-tint-mint`). Pair the tint with a visible group label and use the existing functional tokens for status, selection and feedback.
 - Use Manrope hierarchy and the 4px spacing scale. Retain pill actions and named corner/elevation roles; feature gradients/shadows belong to prominent content, not every row.
 - Keep component defaults and variant meaning consistent. Main action: primary Button; alternative: secondary; low emphasis: ghost; destructive intent: danger. Card groups passive content. Tag classifies/filters; Badge reports count/status. Tabs switch nearby panels; Nav changes destinations.
 - Use Phosphor icons through the shared Icon wrapper (regular weight by default, token sizes 14/18/24px); use optional action-specific icons; keep checkmark/label spacing, focus rings and accessible names. Avoid arbitrary arrows on every button or emoji as interface icons.

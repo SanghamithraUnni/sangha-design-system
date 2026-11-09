@@ -3,3 +3,7 @@ html{scroll-behavior:smooth;scroll-padding-top:24px}body{background:var(--color-
 /* Preserve the existing gallery; allow longer guidance and added component examples. */
 .motion-values code{white-space:normal;overflow-wrap:anywhere}.specimen .ds-dropdown{margin-bottom:8px}.ds-tabs p{font-size:13px}
 .icon-sample{display:inline-flex;align-items:center;gap:var(--space-2);padding:var(--space-2);color:var(--text-secondary);font-size:var(--text-xs)}
+
+.section-tint-samples .small-note { margin-bottom: var(--space-2); }
+.swatches.section-tint-swatches { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.section-tint-swatches .swatch { height: var(--space-10); }

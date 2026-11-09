@@ -32,6 +32,8 @@
 /* v0.2 additions: semantic aliases and interaction, sizing and layering roles. */
 :root{
  --text-primary:var(--color-text);--text-secondary:var(--color-muted);--text-inverse:var(--color-inverse);
+ /* Category backgrounds for grouping content. */
+ --surface-tint-blue:#edf4ff; --surface-tint-lavender:#f1edf9; --surface-tint-mint:#eaf6ef;
  --surface-page:var(--color-canvas);--surface-base:var(--color-surface);--surface-subtle:var(--color-subtle);
  --border-subtle:var(--color-border);--border-control:var(--color-input-border);--border-focus:var(--color-accent);
  --surface-hover:#e8eaeb;--surface-pressed:#dce0e4;--surface-selected:var(--color-accent-soft);

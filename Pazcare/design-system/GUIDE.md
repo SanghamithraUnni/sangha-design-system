@@ -10,6 +10,7 @@ Preserve semantic colour roles, Manrope hierarchy, spacing increments, named cor
 
 - Text: `--text-primary` for headings/content, `--text-secondary` for supporting content, `--text-inverse` on dark surfaces. Do not use disabled opacity for ordinary supporting text.
 - Surfaces: `--surface-page` outer canvas; `--surface-base` content; `--surface-subtle` secondary groups. `--surface-selected` identifies selection.
+- Section tints: use `--surface-tint-blue` (#EDF4FF), `--surface-tint-lavender` (#F1EDF9), or `--surface-tint-mint` (#EAF6EF) as backgrounds to distinguish peer content groups. Pair them with primary or secondary text and a visible group label. Use the existing status and selection tokens for feedback and interactive states.
 - Borders: `--border-subtle` decorative separation; `--border-control` stronger input boundaries; `--border-focus` keyboard focus. Widths: `--border-width` 1px, `--border-width-selected` 2px, `--focus-width` 2px. Focus also has white separation and a blue outer shadow.
 - Accent: `--color-accent` for links/focus/selection; `--color-accent-soft` pale accent surface. Soft hover/pressed: `--accent-hover-soft`/`--accent-pressed-soft`. Solid accent hover token is reserved for future solid accent controls.
 - Functional: success, warning and danger each have foreground and soft background tokens. Error meaning also needs text. Danger action uses a solid foreground/background pairing with named hover and pressed tokens.
