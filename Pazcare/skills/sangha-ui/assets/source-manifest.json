@@ -1,0 +1,28 @@
+{
+  "system_version": "0.2",
+  "source_directory": "design-system/",
+  "source_checkpoint": "b590f95",
+  "purpose": "Portable fallback; use target repository Sangha source when present.",
+  "files": [
+    {
+      "source": "design-system/src/tokens.css",
+      "bundled": "design-system/src/tokens.css",
+      "sha256": "b2f9f08946b187e85e722bddc548a189612c34adc38807377e5099a1526ad60e"
+    },
+    {
+      "source": "design-system/src/components.css",
+      "bundled": "design-system/src/components.css",
+      "sha256": "c07a8c889ec51c7667f58c133f44cb362a91a15b3ca88544580a1cfe3aeb09a5"
+    },
+    {
+      "source": "design-system/src/components.jsx",
+      "bundled": "design-system/src/components.jsx",
+      "sha256": "5303ee7b0aea0ea2f3148b42bd2c339b049ed77974691530edcbee6edab4ce08"
+    },
+    {
+      "source": "design-system/GUIDE.md",
+      "bundled": "design-system/GUIDE.md",
+      "sha256": "1b31736e7b07454d6430dd050f97865205fa937e0a7b5454772f4ecd3343c9ad"
+    }
+  ]
+}

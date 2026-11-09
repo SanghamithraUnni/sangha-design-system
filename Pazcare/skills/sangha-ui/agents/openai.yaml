@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sangha UI"
+  short_description: "Build interfaces with the Sangha design system"
+  default_prompt: "Use $sangha-ui to build an interface for the product brief using the shared tokens and React components."
