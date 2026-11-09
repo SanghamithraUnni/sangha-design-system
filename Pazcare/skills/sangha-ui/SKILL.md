@@ -19,6 +19,9 @@ Identify the main user task, key content, repeated actions and required states f
 
 Choose the layout for the task: a dense workspace, a browsing/profile page, an editorial landing page and a focused form have different information needs. Keep the visual language, not the gallery's sidebar, hero, columns or component catalogue. If alternatives are requested, change the organising idea and interaction model rather than merely rearranging cards.
 
+- Design to the space each region actually has. Let repeated items, rails, and detail panels reflow before text or controls become cramped. Use layout to communicate the primary interaction, with visible labels and selection cues.
+- Define how the interface behaves with full, sparse, missing, and empty data. Preserve valid choices, give each fallback a useful next step, and derive counts and summaries from the data they describe.
+
 ## Preserve the visual language
 
 - Use the shared semantic tokens: neutral canvas/white/subtle surfaces, dark text, muted supporting text, restrained blue emphasis. Functional colours convey named status, with text or icons as well as colour.
@@ -43,4 +46,4 @@ Compose existing exports before introducing a pattern. Read the extension workfl
 
 Check actual imports, responsive flow, long content, empty/error/loading/selected states as relevant, accessible labels, keyboard activation and focus. For dialogs verify containment, Escape and focus restoration; for menus verify arrow keys, dismissal and Tab exit. Respect the documented single-modal and simple anchored-menu limits. Check reduced-motion rules; distinguish source inspection from preference-on visual testing.
 
-Run the target app's build and meaningful interaction checks when code changes. Inspect the resulting screen at a wide and a narrow viewport when browser tools are available. Report checks that could not be performed instead of claiming they passed. Explain the layout rationale, additions and how to open the result in simple terms. Save a meaningful Git checkpoint if the user has requested checkpointing; do not upload or publish without the user's instruction.
+Run the target app's build and meaningful interaction checks when code changes. When browser tools are available, check narrow, intermediate, and wide widths with realistic content. Include a short viewport when using sticky regions. Exercise sparse states and verify focus after controls or panels change. Report checks that could not be performed instead of claiming they passed. Explain the layout rationale, additions and how to open the result in simple terms. Save a meaningful Git checkpoint if the user has requested checkpointing; do not upload or publish without the user's instruction.

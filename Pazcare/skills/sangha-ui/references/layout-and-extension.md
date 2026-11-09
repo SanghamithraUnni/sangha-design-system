@@ -20,6 +20,10 @@ Start with comfortable 44px controls. Compact 36px controls are useful for repea
 
 On phones (700px or narrower), stack secondary regions and keep a clear primary task. Between 701 and 1100px simplify sidebars/columns. Above 1100px allow parallel regions when the task benefits. Let content needs refine these defaults. Test at least narrow and wide sizes, long names/titles and empty/error states.
 
+- Reflow by available space inside the component. Prefer flexible tracks or container queries when a component can appear in a main column, rail, or dialog. For a row with media, copy, and an action, give the copy a readable width and move the action below it when space runs out. Keep each metric's value and label together as the grid changes.
+- Use sticky rails for compact context or frequent navigation. Keep the main heading with the primary task. Bound the rail to the available viewport height and ensure every control stays reachable by scroll and keyboard. Return it to normal flow when there is too little space for parallel regions. Keep the stacked reading and focus order logical.
+- Check intermediate widths around layout changes, a narrow phone, and a wide desktop. For sticky regions, also check short desktop heights. Use realistic long labels, media, and counts. Look for squeezed text, clipped content, page-wide horizontal scroll, and focused controls that end up out of view.
+
 ## Surface, layout and type hierarchy
 
 - Use the cool grey page canvas and one white shell with a subtle border for a cohesive page. Define groups inside it with spacing and section headings. Add a card when its content needs a clear boundary or an independent action.
@@ -27,12 +31,21 @@ On phones (700px or narrower), stack secondary regions and keep a clear primary 
 - Give the main region the width needed for the visitor’s task. Use a compact rail for timely context. Move long collections below the lead region at a readable width and stack sections in task order on phones.
 - Use consistent media frames and align card footers within each row. Preserve image proportions and let titles wrap. Use the body role for prose, the title role for card headings, and small roles for dates, authors, and counts.
 - Use the shared Phosphor aliases for recognizable section and action cues. Pair icons with visible headings or accessible action names. Use the rating token for gold stars, keep the numerical score neutral, and signal a selected reaction through shape and a pressed state.
+- Let the structure hint at what users can do. A time strip suggests chronological browsing, a set of distinct options above one result suggests choosing a lens, and two labelled panels around a shared subject suggest comparison. Use imagery and illustration to reinforce the task. Give interactive items visible labels, keyboard access, and selection cues beyond colour.
 
 ## Action, search and review hierarchy
 
 - Give each major view a clear leading action when the task calls for one. Use the existing dark primary Button for that action. Use the pale blue accent Button selectively for supporting emphasis. Use accent text selectively for a quiet action that advances the current section. Keep repeated row labels and utility actions in neutral text, with clear hover and focus cues. Use sentence case and a specific verb. Keep supporting controls visually quieter and preserve named states.
 - Compose global search from a labelled search input, a decorative leading magnifier, and an adjacent submit action. Use a short placeholder that names searchable content, an accessible label, and `type="search"` with the search keyboard hint. Keep the submit action visible at narrow widths.
 - For review collections, compose a recognisable item header (title and supporting identity, with a thumbnail when it helps), compact rating and date metadata, a readable excerpt, and a distinct footer for the full review and reactions. Use an accessible textual rating and pressed state for reactions. Emphasise the title over metadata, and reserve the body type role for reading-length content. Use this hierarchy in lists or cards according to density, and group the collection on a tinted surface only when it helps distinguish the section.
+- Match controls to intent. Use radios for a mutually exclusive choice, tabs for switching among nearby views, and buttons for in-place actions. Keep focus on the current control when it still makes sense. If an action replaces its trigger, move focus to the next useful control or heading and announce the result when needed. For example, after saving an item, a confirmation can offer a link to the saved collection.
+
+## Data states and derived summaries
+
+- Plan a fallback ladder for the main task. Consider several results, one result, an empty current selection, a missing classification or field, and an empty collection. For example, a recommendation view can show a shortlist, feature its only result, offer another filter when the current one is empty, or point to a broader collection when recommendations are unavailable.
+- Keep a valid selection visible when its results are empty. If the selection itself becomes unavailable, choose a predictable fallback and make the change clear. Label unavailable values explicitly and render actions only when they have a destination. A missing score is distinct from a score of zero.
+- Derive lists, category counts, and metrics from the same source and filters. For a ratio, identify the numerator, denominator, and scope, and deduplicate when counting distinct values. Provide a short explanation when the meaning is not obvious. If there is no denominator, show an appropriate fallback. Keep browsing preferences separate from recorded activity and calculated metrics.
+- Verify these states with representative data and separate sparse fixtures. Check that controls remain useful, summaries reflect the visible scope, and changing data does not leave stale results or focus.
 
 ## Researching familiar patterns
 

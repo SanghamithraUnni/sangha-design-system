@@ -38,7 +38,7 @@ To use it in a different project, copy the complete skill folder into that proje
 .agents/skills/sangha-ui -> ../../skills/sangha-ui
  design-system/              React source, tokens, preview and tests
  skills/sangha-ui/            Skill instructions, references and portable assets
- explorations/reader-profile/ Reading Journal and shared reader data
+ explorations/reader-profile/ Three reader profile explorations and shared data
  products/team-messaging/     Three messaging explorations
  portfolio-audit.md           Original source-style audit
  preview.sh                  Optional preview launcher
@@ -63,6 +63,8 @@ Foundation v0.2, its interactive gallery, and the reusable skill are included. W
 | --- | --- |
 | Design system gallery | `/` |
 | Reading Journal | `/reading-journal.html` |
+| Pick a Feeling | `/pick-a-feeling.html` |
+| Our Books in Common | `/books-in-common.html` |
 | Attention Desk | `/attention-desk.html` |
 | Switchboard | `/switchboard.html` |
 | Topic Rooms | `/topic-rooms.html` |

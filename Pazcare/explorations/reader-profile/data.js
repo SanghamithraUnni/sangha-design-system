@@ -10,6 +10,8 @@ export const profile = {
 const prhCover = isbn => `https://images.penguinrandomhouse.com/cover/${isbn}`;
 
 export const books = {
+  midnight: { title: 'The Midnight Library', author: 'Matt Haig', genre: 'Fantasy', cover: 'ice',
+    edition: { isbn: '9780525559474', publisher: 'Viking', format: 'Hardcover', coverUrl: prhCover('9780525559474') } },
   left: { title: 'The Left Hand of Darkness', author: 'Ursula K. Le Guin', genre: 'Speculative fiction', cover: 'ice',
     edition: { isbn: '9780441007318', publisher: 'Ace', format: 'Paperback', coverUrl: prhCover('9780441007318') } },
   piranesi: { title: 'Piranesi', author: 'Susanna Clarke', genre: 'Speculative fiction', cover: 'sea',
@@ -42,6 +44,11 @@ export const currentRead = {
 };
 
 export const reviews = {
+  midnight: {
+    date: '2025-07-20', rating: 2, likes: 7,
+    excerpt: 'I liked the doorway into each life, but the lesson arrived before the characters did.',
+    text: 'The early scenes promised a stranger, messier book about regret. I wanted to stay in one of those alternate lives long enough to see its complications. Instead, the visits felt like illustrations of a lesson I had already understood. I can see why it comforts people, but I wanted more room for uncertainty.',
+  },
   piranesi: {
     date: '2026-11-04', rating: 5, likes: 24,
     excerpt: 'I wanted to go back to the House as soon as I closed the book.',
@@ -87,6 +94,7 @@ export const finishes = [
   { book: 'station', date: '2026-09-14' },
   { book: 'dispossessed', date: '2025-10-20' },
   { book: 'sea', date: '2025-07-13' },
+  { book: 'midnight', date: '2025-07-19' },
 ];
 export const challenge = {
   year: 2026, count: 130, goal: 120,
@@ -98,7 +106,7 @@ export const challenge = {
   ],
 };
 export const shelves = [
-  { id: 'read', name: 'Read', count: 684, books: ['piranesi', 'tomorrow', 'pachinko', 'night', 'station', 'dispossessed', 'sea'] },
+  { id: 'read', name: 'Read', count: 684, books: ['piranesi', 'tomorrow', 'pachinko', 'night', 'station', 'dispossessed', 'sea', 'midnight'] },
   { id: 'want', name: 'Want to Read', count: 91, books: ['tranquility'] },
   { id: 'current', name: 'Currently Reading', count: 1, books: ['left'] },
   { id: 'dnf', name: 'Did Not Finish', count: 12, books: ['goldfinch'] },
